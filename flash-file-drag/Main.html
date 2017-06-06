@@ -57,17 +57,16 @@
 		            
 					function echo(event)
 					{
-						console.log(event.type, event);
+						console.log(event.type, event.target, event);
 					}
-					
-					[ window, obj.ref ].forEach(function(target) {
-						target.addEventListener("dragenter", echo, false);
-						target.addEventListener("dragexit", echo, false);
-						target.addEventListener("dragleave", echo, false);
-						target.addEventListener("dragover", echo, false);
-						target.addEventListener("drop", echo, false);
-					});
-                	
+
+					//var target = obj.ref;
+					var target = window;
+					target.addEventListener("dragenter", echo, false);
+					target.addEventListener("dragexit", echo, false);
+					target.addEventListener("dragleave", echo, false);
+					target.addEventListener("dragover", echo, false);
+					target.addEventListener("drop", echo, false);
                 });
             // JavaScript enabled so display the flashContent div in case it is not replaced with a swf object.
             swfobject.createCSS("#flashContent", "display:block;text-align:left;");
